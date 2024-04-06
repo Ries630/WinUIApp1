@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="WinUIApp1.BlankPage1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:CommunityToolkit.WinUI.UI.Controls"
+    xmlns:local="using:WinUIApp1"
+    mc:Ignorable="d"
+    d:DataContext="{d:DesignInstance local:BlankPage1ViewModel}"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    
+    
+    <Grid Margin="10">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+        
+            <StackPanel Orientation="Horizontal" Grid.Row="0">
+                <TextBlock Text="{Binding TextBlock1}" />
+                <TextBox Text="{Binding TextBox1}" />
+            </StackPanel>
+            
+            <controls:DockPanel Grid.Row="0">
+                <TextBlock Text="TextBlock" />
+                <TextBox Text="TextBox" />
+            </controls:DockPanel>
+            
+        </StackPanel>
+
+        <ListBox Grid.Row="1">
+            <ListBoxItem Content="ListItem1" />
+            <ListBoxItem Content="ListItem2" />
+            <ListBoxItem Content="ListItem3" />
+        </ListBox>
+
+        <controls:DataGrid ItemsSource="{Binding Items, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" />
+        <controls:DataGrid ItemsSource="{Binding Items, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="2" Grid.Column="1" />
+
+    </Grid>
+</Page>

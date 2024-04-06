@@ -8,7 +8,19 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
-    </StackPanel>
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0">
+            <Button x:Name="myButton" Click="MyButton_Click">Click Me</Button>
+            <Button x:Name="BlankWindow1" Content="BlankWindow1" Click="BlankWindow1_Click" />
+            <Button x:Name="BlankPage1Button" Content="BlankPage1Button" Click="BlankPage1Button_Click" />
+        </StackPanel>
+        <Frame x:Name="PageArea" Grid.Row="1" />
+        
+    </Grid>
 </Window>
