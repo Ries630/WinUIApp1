@@ -1,4 +1,6 @@
 using System.Collections.ObjectModel;
+using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Controls;
 
 // To learn more about WinUI, the WinUI project structure,
@@ -30,15 +32,25 @@ public sealed partial class BlankPage1 : Page
 /// <summary>
 /// ViewModel
 /// </summary>
-public class BlankPage1ViewModel
+public partial class BlankPage1ViewModel : ObservableObject
 {
-    public string TextBlock1 { get; set; }
-    public string TextBox1 { get; set; }
-
     /// <summary>
     /// Item Collection
     /// </summary>
-    public ObservableCollection<Items> Items { get; private set; } = [];
+    [ObservableProperty]
+    private ObservableCollection<Items> items = [];
+
+    [ObservableProperty]
+    private string textBlock1;
+
+    [ObservableProperty]
+    private string textBox1;
+
+    [RelayCommand]
+    private void Confirm()
+    {
+    }
+
 
 }
 
